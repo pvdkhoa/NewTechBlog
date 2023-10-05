@@ -1,0 +1,20 @@
+<div class="list-post">
+  <h2>List of Blogs</h2>
+  <ol role="list">
+    {{#each posts}}
+    <li >
+        <div class="list-item">
+            <img src="imgs/logo.png" alt="">
+        <a href="/post/{{this.id}}">{{this.title}}</a>
+        </div>
+      <p>{{this.content}}</p>
+        <button  onclick="window.location.href='/edit/{{this.id}}'">Edit</button>
+        <button onclick="deletePost('{{this.id}}')">Delete</button>
+    </li>
+    {{/each}}
+  </ol>
+</div>
+
+<script>
+  function deletePost(postId) { if (confirm('Do you want to delete?')) { window.location.href = '/delete/' + postId; } }
+</script>

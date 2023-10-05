@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat, sans-serif;
+}
+
+/* Style for the navbar container */
+.navbar {
+  width: 100%;
+  background-color: #333; /* Change this to your desired background color */
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  color: #fff; /* Change this to your desired text color */
+  position: fixed;
+  z-index: 100;
+}
+
+/* Style for the logo */
+.logo img {
+  width: 40px; /* Adjust the logo width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Add spacing between logo and brand name */
+}
+
+/* Style for the brand name */
+.brand-name h1 {
+  margin: 0; /* Remove default margin */
+  font-size: 24px; /* Adjust the font size as needed */
+}
+.brand-name .nav-link {
+  text-decoration: none;
+  color: white;
+}
+
+.background-img {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center;
+  width: 100%; /* Make the div 100% wide */
+  height: 80vh; /* Set the height to 100% of the viewport height */
+  background-image: url("../imgs/background.jpg"); /* Replace 'background-image.jpg' with your image path */
+  background-size: cover; /* Cover the entire viewport */
+  background-position: center; /* Center the image horizontally and vertically */
+  background-repeat: no-repeat; /* Prevent image repetition */
+}
+.background-container {
+  text-align: center;
+  color: white;
+}
+.background-container h2 {
+  font-size: 46px;
+  font-weight: bold;
+}
+.background-container h3 {
+  font-size: 32px;
+  font-weight: bold;
+}
+.background-container .rounded {
+  display: inline-block; /* Make the span a block element */
+  padding: 10px; /* Add padding to create space inside the span */
+  border-radius: 10px;
+  background-color: #004E64; 
+  color: #fff; 
+}
+.background-container .rounded a{
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+
+/* Add post */
+
+.post-add {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+
+/* CSS for the .post-form class */
+.post-form {
+    display: block; /* Ensures the form elements stack vertically */
+}
+
+/* CSS for labels */
+.post-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* CSS for input and textarea */
+.post-form input[type="text"],
+.post-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* CSS for the submit button */
+.post-form button[type="submit"] {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* CSS for headings */
+.post-add h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+.list-post ol{
+
+	list-style: none;
+	counter-reset: list;
+	padding: 0 1rem;
+
+}
+
+.list-post li{
+    --stop: calc(100% / var(--length) * var(--i));
+	--l: 62%;
+	--l2: 88%;
+	--h: calc((var(--i) - 1) * (180 / var(--length)));
+	--c1: hsl(var(--h), 71%, var(--l));
+	--c2: hsl(var(--h), 71%, var(--l2));
+	
+	position: relative;
+	counter-increment: list;
+	max-width: 45rem;
+	margin: 2rem auto;
+	padding: 2rem 1rem 1rem;
+	box-shadow: 0.1rem 0.1rem 1.5rem rgba(0, 0, 0, 0.3);
+	border-radius: 0.25rem;
+	overflow: hidden;
+	background-color: white;
+}
+.list-post li::before{
+    content: '';
+	display: block;
+	width: 100%;
+	height: 1rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: linear-gradient(to right, var(--c1) var(--stop), var(--c2) var(--stop));
+}
+.list-post h3{
+    display: flex;
+	align-items: baseline;
+	margin: 0 0 1rem;
+	color: rgb(70 70 70);
+}
+.list-post h3::before{
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 0 0 auto;
+	margin-right: 1rem;
+	width: 3rem;
+	height: 3rem;
+	content: counter(list);
+	padding: 1rem;
+	border-radius: 50%;
+	background-color: var(--c1);
+	color: white;
+}
+.list-post img{
+    width: 80px;
+    height: 80px;
+}
+.list-post .list-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.list-post .list-item a{
+    text-align: center;
+    margin-left: 12px;
+    font-size: 24px;
+    font-weight: 300;
+}
+.list-post button{
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px; /* Adjust the value to control the roundness of corners */
+    cursor: pointer;
+    margin-right: 10px;
+}

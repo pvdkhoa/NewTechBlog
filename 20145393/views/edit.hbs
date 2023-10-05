@@ -1,0 +1,29 @@
+<div style="max-width: 800px; margin: 0 auto; background: #65AE5E; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+  <h2 style="color: #fff; font-size: 24px; margin-bottom: 20px;">Edit blog</h2>
+  <form action="/edit/{{post.id}}" method="POST">
+    <div style="margin-bottom: 15px;">
+      <label for="title" style="color: #fff; font-weight: bold;">Tittle:</label>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        value="{{post.title}}"
+        required
+        style="margin-left:12px; width: 80%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9; color: #333;"
+      />
+    </div>
+    <div style="margin-bottom: 20px;">
+      <label for="content" style="color: #fff; font-weight: bold;">Content:</label>
+      <textarea
+        id="content"
+        name="content"
+        required
+        style="width: 80%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9; color: #333;"
+      >{{post.content}}</textarea>
+    </div>
+    <button
+      type="submit"
+      style="background-color: #007bff; color: #fff; padding: 12px 24px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 16px;"
+    >Lưu</button>
+  </form>
+</div>

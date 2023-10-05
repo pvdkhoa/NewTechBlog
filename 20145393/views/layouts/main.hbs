@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>My Blog</title>
+    <link rel="stylesheet" href="css/home.css" >
+    <link rel="stylesheet" href="../../public/css/edit.css">
+</head>
+<body>
+    {{#if isEdit}}
+    <!-- Content for Edit Page -->
+    {{{body}}}
+    {{else if isPost}}
+    <!-- Content for Post Page -->
+    {{{body}}}
+    {{else}}
+    <!-- Content for Other Pages -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="imgs/logo.png" alt="Logo">
+        </div>
+        <div class="brand-name">
+            <h1><a href="/" class="nav-link">HomePage</a></h1>
+        </div>
+    </nav>
+    <div class="background-img">
+        <div class="background-container">
+            <h2>Welcome to Blog Page</h2>
+            <h3>Let's create post</h3>
+            <span class="rounded"><a href="/add">PostPage</a></span>
+        </div>
+    </div>
+    <main>
+        <!-- Content for Main Pages -->
+        {{{body}}}
+    </main>
+    <footer>
+        &copy; 2023 Simple Blog
+    </footer>
+    {{/if}}
+</body>
+</html>
